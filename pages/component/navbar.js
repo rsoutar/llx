@@ -8,12 +8,12 @@ import Link from "next/link";
 import logo from "../../public/llx-logo.png";
 
 const navigation = [
-  { name: "History of the Lodge", href: "/history", current: false },
+  { name: "History of the Lodge", href: "/History", current: false },
   { name: "News and Events", href: "/news", current: false },
-  { name: "Agenda Activities", href: "/agenda", current: false },
-  { name: "Humor Corner", href: "/humor", current: false },
-  { name: "Masonic Visitors", href: "/masonic", current: false },
-  { name: "Joining Freemasonry", href: "/joining", current: false },
+  { name: "Agenda Activities", href: "/Agenda", current: false },
+  { name: "Humor Corner", href: "/Humor", current: false },
+  { name: "Masonic Visitors", href: "/Masonic", current: false },
+  { name: "Joining Freemasonry", href: "/Joining", current: false },
 ];
 
 function classNames(...classes) {
@@ -22,11 +22,11 @@ function classNames(...classes) {
 
 export default function Logo() {
   return (
-    <Disclosure as="nav" className="bg-gray-800 fixed w-full z-10">
+    <Disclosure as="nav" className="bg-[#1E2643] fixed w-full z-10">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
-            <div className="relative flex items-center justify-between h-20">
+            <div className="relative flex items-center justify-between h-20 ">
               <div className="absolute inset-y-0 left-0 flex items-center ">
                 {/* Image*/}
                 <div className="inline-flex items-center justify-center ">
@@ -46,16 +46,16 @@ export default function Logo() {
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                    <XIcon className="block h-6 w-6 " aria-hidden="true" />
                   ) : (
                     <MenuIcon className="block h-6 w-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>
 
-              <div className="flex-1 flex items-center justify-center lg:items-stretch lg:justify-end">
+              <div className="flex-1 flex items-center justify-center lg:items-stretch lg:justify-end pl-10">
                 <div className="hidden lg:block lg:ml-6">
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-2 ">
                     {navigation.map((item) => (
                       <a
                         key={item.name}
@@ -73,6 +73,20 @@ export default function Logo() {
                     ))}
                   </div>
                 </div>
+              </div>
+
+              <div className="content-center  pr-14 hidden lg:block">
+                <Link href="/Members_Password">
+                  <div className="rounded-md shadow w-32">
+                    <a
+                      href=""
+                      className="w-full flex items-center justify-center py-3 border border-transparent rounded-xl text-white bg-indigo-600 hover:bg-indigo-700"
+                    >
+                      {" "}
+                      Members Area
+                    </a>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -95,6 +109,19 @@ export default function Logo() {
                   {item.name}
                 </Disclosure.Button>
               ))}
+              <div className="content-center grid px-3">
+                <Link href="/Members_Password">
+                  <div className="rounded-md shadow w-full ">
+                    <a
+                      href=""
+                      className="w-full h-[40px] mt-2 flex items-center justify-center py-3 border border-transparent rounded-xl text-white bg-indigo-600 hover:bg-indigo-700"
+                    >
+                      
+                      Members Area
+                    </a>
+                  </div>
+                </Link>
+              </div>
             </div>
           </Disclosure.Panel>
         </>
