@@ -9,23 +9,21 @@ export default function Member() {
   const [password, setPassword] = useState();
 
   const handleSubmit = () => {
-    if (password === "llx") {
+    if (password === "boaz") {
       router.replace("/Members_Area");
-    } else if (password === "2"){
+    } else if (password === "shibboleth") {
       router.replace("/Members_Area_Second_Degree");
-    }else if (password === "3"){
+    } else if (password === "tubalcain") {
       router.replace("/Members_Area_Third_Degree");
     }
-
   };
 
   return (
     <div className="font-serif">
       <Navbar />
       <div className=" grid place-items-center text-center h-[750px]">
-        
         <from>
-        <div className="text-[24px] pb-[48px] font-extrabold"> Password</div>
+          <div className="text-[24px] pb-[48px] font-extrabold"> Password</div>
           <input
             type="password"
             name="password"
@@ -33,7 +31,6 @@ export default function Member() {
             className="focus:ring-indigo-500 focus:border-indigo-500 block rounded-md bg-[#D9D9D9]         
           border-[#767676] border-2 w-[317px] h-[56px] text-center text-3xl"
             onChange={(e) => setPassword(e.target.value)}
-
           />
           <button
             type="submit"
@@ -44,8 +41,6 @@ export default function Member() {
             Login
           </button>
         </from>
-        
-      
       </div>
 
       <Footer />
